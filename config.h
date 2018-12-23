@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "hack:size=9:antialias=true";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -83,11 +83,68 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-unsigned int alpha = 0xcc;
+unsigned int alpha = 0xf0;
 
-/* Terminal colors (16 first used in escape sequence) */
+
 static const char *colorname[] = {
-	/* 8 normal colors */
+  "#272822", /* color base00 */
+  "#f92672", /* color base08 */
+  "#a6e22e", /* color base0B */
+  "#f4bf75", /* color base0A */
+  "#66d9ef", /* color base0D */
+  "#ae81ff", /* color base0E */
+  "#a1efe4", /* color base0C */
+  "#f8f8f2", /* color base05 */
+
+  "#75715e", /* color base03 */
+  "#f92672", /* color base08 */
+  "#a6e22e", /* color base0B */
+  "#f4bf75", /* color base0A */
+  "#66d9ef", /* color base0D */
+  "#ae81ff", /* color base0E */
+  "#a1efe4", /* color base0C */
+  "#f9f8f5", /* color base07 */
+  
+  "#fd971f", /* color base09 */
+  "#cc6633", /* color base0F */
+  "#383830", /* color base01 */
+  "#49483e", /* color base02 */
+  "#a59f85", /* color base04 */
+  "#f5f4f1", /* color base06 */
+
+  [255] = 0,
+
+  "#f8f8f2", /* color base05 */
+  "#272822", /* color base00 */
+};
+/*
+const char *colorname[] = {
+	"#1c1c1c",
+	"#c14242",
+	"#6aa037",
+	"#cfab2f",
+	"#2d578a",
+	"#a85eb4",
+	"#2f8d8f",
+	"#d3d7cf",
+
+	"#444444",
+	"#ef2929",
+	"#9dcf70",
+	"#fcda4f",
+	"#729fcf",
+	"#ad7fa8",
+	"#34e2e2",
+	"#eeeeec",
+
+	[255] = 0,
+
+	"#cccccc",
+	"#555555",
+};
+*/
+/*
+static const char *colorname[] = {
 	"black",
 	"red3",
 	"green3",
@@ -97,7 +154,6 @@ static const char *colorname[] = {
 	"cyan3",
 	"gray90",
 
-	/* 8 bright colors */
 	"gray50",
 	"red",
 	"green",
@@ -109,20 +165,20 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
 	"black",
 };
-
+*/
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 257;
-static unsigned int defaultcs = 256;
+unsigned int defaultbg = 0;
+/* static unsigned int defaultcs = 256; */
+static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -174,8 +230,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
