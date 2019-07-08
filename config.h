@@ -83,50 +83,38 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1;
+
+/* gruvbox-dark colorscheme */
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#272822", /* color base00 */
-  "#f92672", /* color base08 */
-  "#a6e22e", /* color base0B */
-  "#f4bf75", /* color base0A */
-  "#66d9ef", /* color base0D */
-  "#ae81ff", /* color base0E */
-  "#a1efe4", /* color base0C */
-  "#f8f8f2", /* color base05 */
-
-  "#75715e", /* color base03 */
-  "#f92672", /* color base08 */
-  "#a6e22e", /* color base0B */
-  "#f4bf75", /* color base0A */
-  "#66d9ef", /* color base0D */
-  "#ae81ff", /* color base0E */
-  "#a1efe4", /* color base0C */
-  "#f9f8f5", /* color base07 */
-  
-  "#fd971f", /* color base09 */
-  "#cc6633", /* color base0F */
-  "#383830", /* color base01 */
-  "#49483e", /* color base02 */
-  "#a59f85", /* color base04 */
-  "#f5f4f1", /* color base06 */
-
-  [255] = 0,
-
-  "#f8f8f2", /* color base05 */
-  "#272822", /* color base00 */
+	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
 };
-
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 15;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 7;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
